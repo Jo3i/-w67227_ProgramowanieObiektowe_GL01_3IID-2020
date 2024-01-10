@@ -12,5 +12,6 @@ namespace Library.Models
         public string Title { get; set; }
         public string Author { get; set; }
         public int PublishYear { get; set; }
+        public List<BorrowedBook> BorrowedBooks { get; set; } = new List<BorrowedBook>();
     }
 }

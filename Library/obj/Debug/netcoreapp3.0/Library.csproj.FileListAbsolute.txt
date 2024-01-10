@@ -1,0 +1,5 @@
+F:\Laby ProgObj\-w67227_ProgramowanieObiektowe_GL01_3IID-2020\Library\bin\Debug\netcoreapp3.0\Library.deps.json
+F:\Laby ProgObj\-w67227_ProgramowanieObiektowe_GL01_3IID-2020\Library\bin\Debug\netcoreapp3.0\Library.dll
+F:\Laby ProgObj\-w67227_ProgramowanieObiektowe_GL01_3IID-2020\Library\obj\Debug\netcoreapp3.0\Library.csprojAssemblyReference.cache
+F:\Laby ProgObj\-w67227_ProgramowanieObiektowe_GL01_3IID-2020\Library\obj\Debug\netcoreapp3.0\Library.AssemblyInfoInputs.cache
+F:\Laby ProgObj\-w67227_ProgramowanieObiektowe_GL01_3IID-2020\Library\obj\Debug\netcoreapp3.0\Library.AssemblyInfo.cs

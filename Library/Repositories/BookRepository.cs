@@ -1,31 +1,29 @@
-﻿using Library.Interfaces;
+﻿using Library.Context;
+using Library.Interfaces;
 using Library.Models;
 using System;
 using System.Collections.Generic;
-using System.IO;
+using System.Linq;
 using System.Text;
-using System.Text.Json;
 
 namespace Library.Repositories
 {
-    public class FileBookRepository : IBookRepository
+    public class BookRepository : IBookRepository
     {
-        private readonly string fileName = "books.json";
+        private LibraryDbContext _dbContext;
 
-        private List<Book> ReadFile()
+        public BookRepository(LibraryDbContext dbContext)
         {
-            var data = FileOperationHelper.ReadFile<List<Book>>(fileName);
-            return data ?? new List<Book>();
+            _dbContext = dbContext;
         }
 
         public void Create(Book item)
         {
-            var books = ReadFile();
-
-            item.Id = books.Count + 1;
-            books.Add(item);
-            FileOperationHelper.WriteFile<List<Book>>(books, fileName);
-
+            using (var dbContext = new LibraryDbContext())
+            {
+                dbContext.Books.Add(item);
+                dbContext.SaveChanges();
+            }
         }
 
         public void Delete(int id)
@@ -40,7 +38,7 @@ namespace Library.Repositories
 
         public List<Book> GetAll()
         {
-            return ReadFile();
+            return _dbContext.Books.ToList();
         }
 
         public List<Book> GetBooksByAuthor(string author)

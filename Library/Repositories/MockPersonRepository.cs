@@ -47,12 +47,12 @@ namespace Library.Repositories
             if (person == null)
                 return;
 
-            person.BorrowedBooks.Add(book);
+           
         }
 
         public List<Book> GetBorrowedBook(long id)
         {
-            return Get(id)?.BorrowedBooks ?? new List<Book>();
+            return new List<Book>();
         }
     }
 }

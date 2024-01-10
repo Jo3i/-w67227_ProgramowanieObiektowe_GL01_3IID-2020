@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Library.Context;
 using Library.Interfaces;
 using Library.Repositories;
 using Microsoft.AspNetCore.Builder;
@@ -28,8 +29,10 @@ namespace Lab7
         {
             services.AddControllers();
             services.AddSwaggerGen();   
-            services.AddTransient<IBookRepository, FileBookRepository>();
+            services.AddTransient<IBookRepository, BookRepository>();
             services.AddSingleton<IPersonRepository, MockPersonRepository>();
+
+            services.AddDbContext<LibraryDbContext>();
 
         }
 
